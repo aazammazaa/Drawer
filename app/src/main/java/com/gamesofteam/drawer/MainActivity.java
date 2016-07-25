@@ -1,5 +1,6 @@
 package com.gamesofteam.drawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,10 +25,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Mainfrag fragment = new Mainfrag();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragview,fragment);
-        fragmentTransaction.commit();
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -89,9 +87,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            Mainfrag fragment = new Mainfrag();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragview,fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
-
+            Intent in = new Intent(getApplicationContext(), MainActivity.class);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
