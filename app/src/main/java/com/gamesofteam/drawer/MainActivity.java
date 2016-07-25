@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
             Intent in = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(in);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
